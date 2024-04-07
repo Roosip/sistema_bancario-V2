@@ -15,7 +15,9 @@ def exibir_erro(mensagem):
 
 # Função para validar CPF
 def validar_cpf(cpf):
-    return re.match(r'^\d{11}$', cpf)
+    if not re.match(r'^\d{3}\.\d{3}\.\d{3}-\d{2}', cpf):
+        raise ValueError("O CPF fornecido está em um formato inválido. Por favor, insira no formato 'XXX.XXX.XXX-XX'.")
+    return True
 
 # Função para obter entrada do usuário com validação
 def obter_entrada_usuario(mensagem, tipo, validacao=None):
@@ -61,11 +63,17 @@ def criar_novo_usuario():
             if not dados_do_usuario["nome"]:
                 raise ValueError("O nome não pode estar vazio.")
             
-            data_de_nascimento_str = obter_entrada_usuario("Digite a sua data de nascimento (DD/MM/AAAA): ", str)
-            data_de_nascimento = datetime.strptime(data_de_nascimento_str, "%d/%m/%Y")
-            if datetime.now().year - data_de_nascimento.year < 18:
-                raise ValueError("A idade deve ser maior ou igual a 18 anos.")
-            dados_do_usuario["data_nascimento"] = data_de_nascimento.strftime("%d/%m/%Y")
+            while True:
+                data_de_nascimento_str = obter_entrada_usuario("Digite a sua data de nascimento (DD/MM/AAAA): ", str)
+                try:
+                    data_de_nascimento = datetime.strptime(data_de_nascimento_str, "%d/%m/%Y")
+                    if datetime.now().year - data_de_nascimento.year < 18:
+                        raise ValueError("A idade deve ser maior ou igual a 18 anos.")
+                    dados_do_usuario["data_nascimento"] = data_de_nascimento.strftime("%d/%m/%Y")
+                    break  # Se a data for válida e a idade for maior ou igual a 18 anos, sai do loop
+                except ValueError:
+                    print("Formato de data inválido. Por favor, insira a data no formato DD/MM/AAAA.")
+
             
             cpf = obter_entrada_usuario("Digite os 11 digitos do seu cpf, sem pontos e traços: ", str, validar_cpf)
             dados_do_usuario["cpf"] = cpf
