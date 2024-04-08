@@ -1,0 +1,10 @@
+# Arquivos gerados pelo Python
+*.pyc
+__pycache__
+
+# Arquivo de dados do usuário
+dados_do_usuario.json
+
+# Arquivos de ambiente virtual Python
+venv/
+env/

@@ -1,35 +1,23 @@
 [
     {
-        "nome": "aeryae",
-        "data_nascimento": "21/12/2001",
-        "cpf": "55555555555",
-        "logradouro": "aesrya5",
-        "numero": 34,
-        "bairro": "stherawyh",
-        "cidade": "aetgaqt",
-        "unidade_federal": "dg",
-        "estado": "asgaery"
+        "nome": "ROOSIP",
+        "data_nascimento": "01/01/2000",
+        "cpf": "222.222.222-22",
+        "logradouro": "rua de cima",
+        "numero": 12,
+        "bairro": "bairro dos devs",
+        "cidade": "cidade do programador",
+        "unidade_federal": "DEV",
+        "estado": "estado dos devs",
+        "numero_conta": 10268,
+        "numero_agencia": 3334,
+        "saldo": 0.0
     },
     {
-        "nome": "agaaaaaaaaaaaaat",
-        "data_nascimento": "12/12/2000",
-        "cpf": "66666666666",
-        "logradouro": "srthaew",
-        "numero": 34,
-        "bairro": "sfjsr",
-        "cidade": "sftgjhs",
-        "unidade_federal": "df",
-        "estado": "srht"
-    },
-    {
-        "nome": "dstahae",
-        "data_nascimento": "14/11/2000",
-        "cpf": "88888888888",
-        "logradouro": "fghkjtedyi",
-        "numero": 34,
-        "bairro": "styhae",
-        "cidade": "aergyhae",
-        "unidade_federal": "ae",
-        "estado": "trhtr"
+        "nome": "ROOSIP",
+        "cpf": "222.222.222-22",
+        "numero_conta": 23147,
+        "numero_agencia": 7787,
+        "saldo": 0.0
     }
 ]
